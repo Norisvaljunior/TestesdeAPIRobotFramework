@@ -5,7 +5,15 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
- 
+
+    permissions:
+          contents: read
+          pages: write
+          id-token: write
+        environment:
+          name: github-pages
+          url: https://norisvaljunior.github.io/TestesdeAPIRobotFramework/report.html
+
     steps:
       - name: clonando para o repositorio na maquina virtual
         # run: echo clonando para o repositorio na maquina virtual
@@ -34,3 +42,17 @@ jobs:
         with:
           name: robot-framework-report
           path: results/
+
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+ 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: results/
+ 
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        
