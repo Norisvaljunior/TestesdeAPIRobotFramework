@@ -7,12 +7,12 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-          contents: read
-          pages: write
-          id-token: write
-        environment:
-          name: github-pages
-          url: https://norisvaljunior.github.io/TestesdeAPIRobotFramework/report.html
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: https://norisvaljunior.github.io/TestesdeAPIRobotFramework/report.html
 
     steps:
       - name: clonando para o repositorio na maquina virtual
@@ -55,4 +55,3 @@ jobs:
       - name: Deploy to Github Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
