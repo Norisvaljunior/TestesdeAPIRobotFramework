@@ -4,6 +4,7 @@ on: push
  
 jobs:
   test:
+    name: Testes de API
     runs-on: ubuntu-latest
 
     permissions:
